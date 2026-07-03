@@ -1,4 +1,7 @@
-/* ========= RESET ========= */
+/* ===========================================
+AURA MANIFESTE
+Inspired by Brothas / Refero
+=========================================== */
 
 *{
 margin:0;
@@ -11,271 +14,467 @@ scroll-behavior:smooth;
 }
 
 body{
+
 background:#050505;
+
 color:#F5F5F5;
-font-family:'Manrope',sans-serif;
+
+font-family:'Inter',sans-serif;
+
 overflow-x:hidden;
+
 }
 
-/* ========= BACKGROUND ========= */
-
 body::before{
+
 content:"";
+
 position:fixed;
-width:650px;
-height:650px;
+
+width:700px;
+
+height:700px;
+
 right:-250px;
-top:-200px;
-background:radial-gradient(circle,#4F46E530 0%,transparent 70%);
+
+top:-250px;
+
+background:radial-gradient(circle,#6D28D930 0%,transparent 70%);
+
 pointer-events:none;
+
 z-index:-1;
+
 }
 
 body::after{
-content:"";
-position:fixed;
-width:650px;
-height:650px;
-left:-250px;
-bottom:-250px;
-background:radial-gradient(circle,#2563EB20 0%,transparent 70%);
-pointer-events:none;
-z-index:-1;
-}
 
-/* ========= CONTAINER ========= */
+content:"";
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+left:-250px;
+
+bottom:-250px;
+
+background:radial-gradient(circle,#2563EB20 0%,transparent 70%);
+
+pointer-events:none;
+
+z-index:-1;
+
+}
 
 .container{
+
 width:min(92%,1180px);
+
 margin:auto;
+
 }
 
-/* ========= HEADER ========= */
+/* HERO */
 
-header{
-padding:30px 0;
+.hero{
+
+min-height:90vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:80px 0;
+
 }
 
 .logo{
-font-family:'Cormorant Garamond',serif;
-font-size:34px;
-letter-spacing:4px;
-text-align:center;
-}
 
-/* ========= HERO ========= */
+font-size:15px;
 
-.hero{
-padding:70px 0 90px;
-text-align:center;
-}
+letter-spacing:8px;
 
-.eyebrow{
-font-size:12px;
-letter-spacing:3px;
-color:#8EA6FF;
-margin-bottom:20px;
+font-weight:600;
+
+margin-bottom:45px;
+
+color:#b8b8b8;
+
 }
 
 .hero h1{
-font-family:'Cormorant Garamond',serif;
-font-size:64px;
-line-height:1.08;
-font-weight:600;
-margin-bottom:24px;
+
+font-family:'Space Grotesk',sans-serif;
+
+font-size:72px;
+
+font-weight:700;
+
+line-height:1.05;
+
+max-width:900px;
+
+margin:auto;
+
+margin-bottom:28px;
+
 }
 
 .subtitle{
-max-width:620px;
+
+max-width:680px;
+
 margin:auto;
-font-size:18px;
+
+font-size:19px;
+
 line-height:1.8;
-color:#BEBEBE;
+
+color:#a8a8a8;
+
 margin-bottom:45px;
+
 }
 
-.primary-btn{
+.discover{
+
 display:inline-flex;
-justify-content:center;
-align-items:center;
-padding:18px 34px;
+
+padding:17px 34px;
+
 border-radius:999px;
-background:linear-gradient(135deg,#6D28D9,#2563EB);
+
+border:1px solid rgba(255,255,255,.18);
+
+text-decoration:none;
+
 color:white;
-text-decoration:none;
-font-weight:600;
+
 transition:.3s;
+
+font-weight:600;
+
 }
 
-.primary-btn:hover{
-transform:translateY(-3px);
-box-shadow:0 15px 40px rgba(99,102,241,.30);
+.discover:hover{
+
+background:white;
+
+color:black;
+
 }
 
-/* ========= COLLECTION ========= */
+/* EBOOK */
 
-.collection{
-padding-bottom:100px;
+.ebook{
+
+padding:90px 0;
+
 }
 
-.book{
+.ebook .container{
+
 display:grid;
-grid-template-columns:340px 1fr;
-gap:60px;
+
+grid-template-columns:430px 1fr;
+
+gap:90px;
+
 align-items:center;
-margin-bottom:120px;
+
 }
 
-.book img{
+.book-image img{
+
 width:100%;
+
 border-radius:22px;
+
 }
 
-.book-content h2{
-font-family:'Cormorant Garamond',serif;
-font-size:42px;
-margin-bottom:18px;
-font-weight:600;
+.category{
+
+display:inline-block;
+
+font-size:12px;
+
+letter-spacing:3px;
+
+margin-bottom:20px;
+
+color:#7C8CFF;
+
 }
 
-.book-content p{
+.book-info h2{
+
+font-family:'Space Grotesk',sans-serif;
+
+font-size:46px;
+
+line-height:1.15;
+
+margin-bottom:22px;
+
+}
+
+.book-info p{
+
 font-size:17px;
+
 line-height:1.9;
-color:#BEBEBE;
-margin-bottom:35px;
+
+color:#B6B6B6;
+
+margin-bottom:38px;
+
 }
 
-.book-btn{
+.buy{
+
 display:inline-flex;
-padding:16px 30px;
-background:#fff;
-color:#111;
-text-decoration:none;
+
+justify-content:center;
+
+align-items:center;
+
+padding:18px 42px;
+
+background:#22C55E;
+
 border-radius:999px;
+
+text-decoration:none;
+
 font-weight:700;
+
+color:white;
+
 transition:.3s;
+
 }
 
-.book-btn:hover{
-background:#6D28D9;
-color:#fff;
+.buy:hover{
+
+background:#16A34A;
+
+transform:translateY(-3px);
+
 }
 
-/* ========= CONTACT ========= */
+/* ===========================================
+CONTACT
+=========================================== */
 
 .contact{
-padding:20px 0 80px;
+
+padding:120px 0 80px;
+
 text-align:center;
+
 }
 
-.contact p{
-color:#9F9F9F;
-margin-bottom:22px;
-font-size:15px;
+.contact h3{
+
+font-family:'Space Grotesk',sans-serif;
+
+font-size:32px;
+
+margin-bottom:35px;
+
 }
 
-.contact-links{
+.contact-buttons{
+
 display:flex;
+
 justify-content:center;
-gap:28px;
+
+gap:18px;
+
 flex-wrap:wrap;
+
 }
 
-.contact-links a{
-color:#fff;
+.contact-buttons a{
+
+padding:16px 30px;
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:999px;
+
+color:white;
+
 text-decoration:none;
-font-weight:600;
+
 transition:.3s;
+
+font-weight:500;
+
 }
 
-.contact-links a:hover{
-color:#7C8CFF;
+.contact-buttons a:hover{
+
+background:white;
+
+color:#050505;
+
 }
 
-/* ========= MOBILE ========= */
+/* ===========================================
+MOBILE FIRST
+=========================================== */
 
 @media (max-width:900px){
 
-header{
-padding:24px 0;
+.hero{
+
+min-height:auto;
+
+padding:70px 0 60px;
+
 }
 
 .logo{
-font-size:28px;
-}
 
-.hero{
-padding:40px 0 70px;
+font-size:13px;
+
+letter-spacing:5px;
+
+margin-bottom:35px;
+
 }
 
 .hero h1{
+
 font-size:42px;
-line-height:1.15;
+
+line-height:1.12;
+
+margin-bottom:20px;
+
 }
 
 .subtitle{
+
 font-size:16px;
-line-height:1.8;
+
+line-height:1.7;
+
 padding:0 10px;
+
+margin-bottom:35px;
+
 }
 
-.primary-btn{
+.discover{
+
 width:100%;
+
 max-width:320px;
-margin:auto;
-}
 
-.book{
-grid-template-columns:1fr;
-gap:28px;
-margin-bottom:70px;
-text-align:center;
-}
-
-.book img{
-max-width:270px;
-margin:auto;
-}
-
-.book-content h2{
-font-size:32px;
-}
-
-.book-content p{
-font-size:16px;
-}
-
-.book-btn{
-width:100%;
-max-width:280px;
 justify-content:center;
+
+}
+
+.ebook{
+
+padding:70px 0;
+
+}
+
+.ebook .container{
+
+display:flex;
+
+flex-direction:column;
+
+gap:35px;
+
+}
+
+.book-image{
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.book-image img{
+
+max-width:270px;
+
+}
+
+.book-info{
+
+text-align:center;
+
+}
+
+.book-info h2{
+
+font-size:32px;
+
+}
+
+.book-info p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.buy{
+
+width:100%;
+
+max-width:320px;
+
+justify-content:center;
+
 }
 
 .contact{
-padding-bottom:50px;
+
+padding:70px 0 50px;
+
 }
 
-.contact-links{
+.contact h3{
+
+font-size:26px;
+
+}
+
+.contact-buttons{
+
 flex-direction:column;
-gap:18px;
-}
+
+align-items:center;
 
 }
 
-/* ========= DESKTOP GRANDE ========= */
+.contact-buttons a{
 
-@media (min-width:1500px){
+width:100%;
 
-.hero h1{
-font-size:76px;
-}
+max-width:320px;
 
-.subtitle{
-font-size:20px;
-}
+justify-content:center;
 
-.book{
-grid-template-columns:380px 1fr;
+display:flex;
+
 }
 
 }
