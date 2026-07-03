@@ -1,6 +1,6 @@
-/* ===================================================
+/* =========================
 AURA MANIFESTE
-=================================================== */
+========================= */
 
 *{
 margin:0;
@@ -14,29 +14,67 @@ scroll-behavior:smooth;
 
 body{
 
-font-family:'Inter',sans-serif;
-
-background:#060606;
+background:#070707;
 
 color:#F5F5F5;
+
+font-family:"Inter",sans-serif;
 
 overflow-x:hidden;
 
 }
 
+img{
+
+display:block;
+
+max-width:100%;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
 .container{
 
-width:min(92%,1120px);
+width:min(92%,1180px);
 
 margin:auto;
 
 }
 
-/* ================= HEADER ================= */
+/* =========================
+HEADER
+========================= */
 
 header{
 
-padding:24px 0;
+position:sticky;
+
+top:0;
+
+z-index:100;
+
+backdrop-filter:blur(14px);
+
+background:rgba(7,7,7,.72);
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+header .container{
+
+height:72px;
+
+display:flex;
+
+align-items:center;
 
 }
 
@@ -48,47 +86,49 @@ font-weight:600;
 
 letter-spacing:.18em;
 
-color:#F5F5F5;
-
 }
 
-/* ================= HERO ================= */
+/* =========================
+HERO
+========================= */
 
 .hero{
 
-padding:90px 0 70px;
+padding:110px 0 80px;
 
 }
 
 .hero h1{
 
-font-size:clamp(2.5rem,5vw,4.4rem);
+font-size:clamp(2.7rem,6vw,5rem);
+
+line-height:1.02;
 
 font-weight:600;
 
-line-height:1.05;
-
 max-width:760px;
 
-margin-bottom:22px;
-
 letter-spacing:-2px;
+
+margin-bottom:28px;
 
 }
 
 .hero p{
 
-max-width:620px;
-
 font-size:18px;
 
 line-height:1.9;
 
-color:#A8A8A8;
+color:#B3B3B3;
+
+max-width:640px;
 
 }
 
-/* ================= EBOOK ================= */
+/* =========================
+EBOOKS
+========================= */
 
 .ebook{
 
@@ -100,17 +140,29 @@ padding:90px 0;
 
 display:grid;
 
-grid-template-columns:420px 1fr;
-
-align-items:center;
+grid-template-columns:430px 1fr;
 
 gap:90px;
+
+align-items:center;
 
 }
 
 .reverse{
 
-grid-template-columns:1fr 420px;
+grid-template-columns:1fr 430px;
+
+}
+
+.reverse .ebook-image{
+
+order:2;
+
+}
+
+.reverse .ebook-content{
+
+order:1;
 
 }
 
@@ -128,39 +180,41 @@ width:100%;
 
 max-width:340px;
 
-transition:.35s;
+transition:.45s;
+
+filter:drop-shadow(0 25px 50px rgba(0,0,0,.55));
 
 }
 
 .ebook-image img:hover{
 
-transform:translateY(-8px);
+transform:translateY(-10px);
 
 }
 
 .ebook-content span{
 
-display:block;
+display:inline-block;
 
 font-size:12px;
 
-letter-spacing:.25em;
+letter-spacing:.28em;
 
-color:#7D8FFF;
+color:#8FA2FF;
 
-margin-bottom:18px;
+margin-bottom:20px;
 
 }
 
 .ebook-content h2{
 
-font-size:42px;
+font-size:46px;
+
+line-height:1.08;
 
 font-weight:600;
 
-line-height:1.15;
-
-margin-bottom:18px;
+margin-bottom:24px;
 
 }
 
@@ -168,13 +222,13 @@ margin-bottom:18px;
 
 font-size:17px;
 
-line-height:1.8;
+line-height:1.9;
 
-color:#B9B9B9;
-
-margin-bottom:18px;
+color:#BDBDBD;
 
 max-width:520px;
+
+margin-bottom:16px;
 
 }
 
@@ -182,31 +236,38 @@ max-width:520px;
 
 font-size:15px;
 
-margin-bottom:35px;
+margin-bottom:34px;
 
 }
+/* =========================
+BOTÃO
+========================= */
 
 .button{
 
 display:inline-flex;
 
-justify-content:center;
-
 align-items:center;
+
+justify-content:center;
 
 padding:18px 34px;
 
 background:#22C55E;
 
-color:white;
+color:#ffffff;
 
-text-decoration:none;
-
-border-radius:999px;
+font-size:15px;
 
 font-weight:700;
 
+letter-spacing:.05em;
+
+border-radius:999px;
+
 transition:.3s;
+
+box-shadow:0 12px 35px rgba(34,197,94,.25);
 
 }
 
@@ -216,12 +277,17 @@ background:#16A34A;
 
 transform:translateY(-3px);
 
+box-shadow:0 18px 45px rgba(34,197,94,.35);
+
 }
-/* ================= CONTACT ================= */
+
+/* =========================
+CONTACT
+========================= */
 
 .contact{
 
-padding:40px 0 80px;
+padding:70px 0;
 
 border-top:1px solid rgba(255,255,255,.06);
 
@@ -241,8 +307,6 @@ gap:40px;
 
 color:#BDBDBD;
 
-text-decoration:none;
-
 font-size:15px;
 
 transition:.3s;
@@ -251,17 +315,19 @@ transition:.3s;
 
 .contact-links a:hover{
 
-color:white;
+color:#ffffff;
 
 }
 
-/* ================= MOBILE ================= */
+/* =========================
+MOBILE
+========================= */
 
 @media(max-width:900px){
 
-header{
+header .container{
 
-padding:18px 0;
+height:60px;
 
 }
 
@@ -273,7 +339,7 @@ font-size:15px;
 
 .hero{
 
-padding:60px 0 50px;
+padding:70px 0 40px;
 
 }
 
@@ -283,17 +349,11 @@ font-size:42px;
 
 letter-spacing:-1px;
 
-max-width:100%;
-
 }
 
 .hero p{
 
 font-size:16px;
-
-line-height:1.8;
-
-max-width:100%;
 
 }
 
@@ -309,13 +369,15 @@ padding:60px 0;
 
 grid-template-columns:1fr;
 
-gap:35px;
+gap:40px;
 
 }
 
-.reverse .ebook-image{
+.reverse .ebook-image,
 
-order:-1;
+.reverse .ebook-content{
+
+order:initial;
 
 }
 
@@ -339,11 +401,11 @@ font-size:32px;
 
 .description{
 
-font-size:16px;
-
 margin-left:auto;
 
 margin-right:auto;
+
+font-size:16px;
 
 }
 
@@ -363,7 +425,7 @@ max-width:320px;
 
 .contact{
 
-padding:30px 0 50px;
+padding:50px 0;
 
 }
 
@@ -371,33 +433,9 @@ padding:30px 0 50px;
 
 flex-direction:column;
 
-align-items:center;
-
 gap:18px;
 
-}
-
-}
-
-/* ================= DESKTOP LARGE ================= */
-
-@media(min-width:1400px){
-
-.container{
-
-max-width:1180px;
-
-}
-
-.hero h1{
-
-font-size:5rem;
-
-}
-
-.ebook-image img{
-
-max-width:380px;
+align-items:center;
 
 }
 
