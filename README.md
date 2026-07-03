@@ -1,0 +1,1 @@
+Projet Aura Manifeste - structure de départ.
