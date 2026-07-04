@@ -1,6 +1,6 @@
-/* =========================
-AURA MANIFESTE
-========================= */
+/* ===================================================
+AURA MANIFESTE V2
+=================================================== */
 
 *{
 margin:0;
@@ -14,13 +14,61 @@ scroll-behavior:smooth;
 
 body{
 
-background:#070707;
-
-color:#F5F5F5;
-
 font-family:"Inter",sans-serif;
 
+background:#070707;
+
+color:#F4F4F4;
+
 overflow-x:hidden;
+
+position:relative;
+
+}
+
+/* Glow */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+top:-300px;
+
+right:-250px;
+
+background:radial-gradient(circle,rgba(168,85,247,.08),transparent 70%);
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+left:-300px;
+
+bottom:-300px;
+
+background:radial-gradient(circle,rgba(255,196,80,.06),transparent 70%);
+
+pointer-events:none;
+
+z-index:-1;
 
 }
 
@@ -48,96 +96,138 @@ margin:auto;
 
 }
 
-/* =========================
-HEADER
-========================= */
+/* HEADER */
 
 header{
+
+padding:22px 0;
 
 position:sticky;
 
 top:0;
 
-z-index:100;
+z-index:999;
 
-backdrop-filter:blur(14px);
+backdrop-filter:blur(18px);
 
-background:rgba(7,7,7,.72);
+background:rgba(7,7,7,.55);
 
-border-bottom:1px solid rgba(255,255,255,.05);
-
-}
-
-header .container{
-
-height:72px;
-
-display:flex;
-
-align-items:center;
+border-bottom:1px solid rgba(255,255,255,.04);
 
 }
 
 .logo{
 
-font-size:17px;
+font-size:16px;
 
 font-weight:600;
 
-letter-spacing:.18em;
+letter-spacing:.22em;
 
 }
 
-/* =========================
-HERO
-========================= */
+/* HERO */
 
 .hero{
 
-padding:70px 0 50px;
+min-height:58vh;
 
 display:flex;
 
 align-items:center;
 
-min-height:55vh;
+justify-content:center;
+
+padding:60px 0;
+
+}
+
+.hero-center{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+text-align:center;
 
 }
 
 .hero h1{
 
-font-size:clamp(2.4rem,5vw,4.2rem);
+font-family:"Cormorant Garamond",serif;
 
-line-height:1.08;
+font-size:clamp(3rem,6vw,5rem);
 
 font-weight:600;
 
-max-width:620px;
+line-height:1.03;
 
-letter-spacing:-1.5px;
+max-width:760px;
 
-margin-bottom:18px;
+}
+
+.hero-line{
+
+width:90px;
+
+height:1px;
+
+background:#B89645;
+
+margin:28px 0;
+
+opacity:.9;
 
 }
 
 .hero p{
 
-font-size:17px;
+font-size:18px;
 
-line-height:1.8;
+line-height:1.9;
 
-color:#A9A9A9;
+color:#B7B7B7;
 
-max-width:500px;
+max-width:560px;
 
 }
-/* =========================
+/* ===================================================
 EBOOKS
-========================= */
+=================================================== */
 
 .ebook{
 
 padding:90px 0;
+
+position:relative;
+
+}
+
+.ebook::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+bottom:0;
+
+transform:translateX(-50%);
+
+width:85%;
+
+height:1px;
+
+background:rgba(255,255,255,.05);
+
+}
+
+.ebook:last-of-type::after{
+
+display:none;
 
 }
 
@@ -147,7 +237,7 @@ display:grid;
 
 grid-template-columns:430px 1fr;
 
-gap:90px;
+gap:100px;
 
 align-items:center;
 
@@ -171,11 +261,41 @@ order:1;
 
 }
 
+/* IMAGE */
+
 .ebook-image{
 
 display:flex;
 
 justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+}
+
+.ebook-image::before{
+
+content:"";
+
+position:absolute;
+
+width:340px;
+
+height:340px;
+
+background:radial-gradient(circle,rgba(184,150,69,.10),transparent 70%);
+
+filter:blur(30px);
+
+z-index:-1;
+
+}
+
+.reverse .ebook-image::before{
+
+background:radial-gradient(circle,rgba(126,95,255,.10),transparent 70%);
 
 }
 
@@ -183,50 +303,83 @@ justify-content:center;
 
 width:100%;
 
-max-width:420px;
+max-width:390px;
+
+transform:perspective(1400px) rotateY(-12deg);
 
 transition:.45s ease;
 
-transform:perspective(1400px) rotateY(-10deg);
-
 filter:
-drop-shadow(0 40px 70px rgba(0,0,0,.65))
-drop-shadow(0 0 45px rgba(214,180,90,.08));
+
+drop-shadow(0 40px 70px rgba(0,0,0,.65));
 
 }
+
+.reverse .ebook-image img{
+
+transform:perspective(1400px) rotateY(12deg);
+
+}
+
 .ebook-image img:hover{
 
 transform:
+
 perspective(1400px)
+
 rotateY(-6deg)
-translateY(-10px)
-scale(1.03);
+
+translateY(-8px)
+
+scale(1.02);
 
 }
+
+.reverse .ebook-image img:hover{
+
+transform:
+
+perspective(1400px)
+
+rotateY(6deg)
+
+translateY(-8px)
+
+scale(1.02);
+
+}
+
+/* CONTENT */
 
 .ebook-content span{
 
 display:inline-block;
 
-font-size:12px;
+font-size:11px;
 
 letter-spacing:.28em;
 
-color:#8FA2FF;
+color:#A48B4D;
 
 margin-bottom:20px;
+
+text-transform:uppercase;
 
 }
 
 .ebook-content h2{
 
-font-size:46px;
+font-family:"Cormorant Garamond",serif;
 
-line-height:1.08;
+font-size:54px;
 
 font-weight:600;
 
+line-height:1.05;
+
 margin-bottom:24px;
+
+max-width:560px;
 
 }
 
@@ -236,11 +389,11 @@ font-size:17px;
 
 line-height:1.9;
 
-color:#BDBDBD;
+color:#B8B8B8;
 
 max-width:520px;
 
-margin-bottom:16px;
+margin-bottom:18px;
 
 }
 
@@ -248,23 +401,26 @@ margin-bottom:16px;
 
 font-size:15px;
 
-margin-bottom:34px;
+margin-bottom:36px;
+
+max-width:540px;
 
 }
-/* =========================
-BOTÃO
-========================= */
+/* ===================================================
+BUTTON
+=================================================== */
 
 .button{
 
 display:inline-flex;
-  gap:12px;
 
 align-items:center;
 
 justify-content:center;
 
-padding:20px 38px;
+gap:12px;
+
+padding:20px 40px;
 
 background:#22C55E;
 
@@ -274,13 +430,14 @@ font-size:15px;
 
 font-weight:700;
 
-letter-spacing:.05em;
+letter-spacing:.04em;
 
 border-radius:999px;
 
-transition:.3s;
+transition:.35s;
 
-box-shadow:0 12px 35px rgba(34,197,94,.25);
+box-shadow:
+0 18px 40px rgba(34,197,94,.28);
 
 }
 
@@ -290,19 +447,20 @@ background:#16A34A;
 
 transform:translateY(-3px);
 
-box-shadow:0 18px 45px rgba(34,197,94,.35);
+box-shadow:
+0 25px 55px rgba(34,197,94,.38);
 
 }
 
-/* =========================
+/* ===================================================
 CONTACT
-========================= */
+=================================================== */
 
 .contact{
 
 padding:70px 0;
 
-border-top:1px solid rgba(255,255,255,.06);
+border-top:1px solid rgba(255,255,255,.05);
 
 }
 
@@ -312,13 +470,13 @@ display:flex;
 
 justify-content:center;
 
-gap:40px;
+gap:45px;
 
 }
 
 .contact-links a{
 
-color:#BDBDBD;
+color:#9D9D9D;
 
 font-size:15px;
 
@@ -328,20 +486,71 @@ transition:.3s;
 
 .contact-links a:hover{
 
-color:#ffffff;
+color:white;
 
 }
 
-/* =========================
+/* ===================================================
 MOBILE
-========================= */
+=================================================== */
 
 @media(max-width:900px){
-  .reverse{
+
+header{
+
+padding:12px 0;
+
+}
+
+.logo{
+
+font-size:15px;
+
+}
+
+.hero{
+
+min-height:auto;
+
+padding:55px 0 30px;
+
+}
+
+.hero h1{
+
+font-size:44px;
+
+}
+
+.hero-line{
+
+margin:22px 0;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+max-width:330px;
+
+}
+
+.ebook{
+
+padding:60px 0;
+
+}
+
+.ebook-grid,
+
+.reverse{
 
 display:flex;
 
 flex-direction:column;
+
+gap:35px;
 
 }
 
@@ -357,57 +566,25 @@ order:2 !important;
 
 }
 
-header .container{
+.ebook-image img{
 
-height:60px;
+max-width:290px;
 
-}
-
-.logo{
-
-font-size:15px;
+transform:none;
 
 }
 
-.hero{
+.reverse .ebook-image img{
 
-padding:70px 0 40px;
-
-}
-
-.hero h1{
-
-font-size:42px;
-
-letter-spacing:-1px;
+transform:none;
 
 }
 
-.hero p{
+.ebook-image img:hover,
 
-font-size:16px;
+.reverse .ebook-image img:hover{
 
-}
-
-.ebook{
-
-padding:60px 0;
-
-}
-
-.ebook-grid,
-
-.reverse{
-
-grid-template-columns:1fr;
-
-gap:40px;
-
-}
-
-  .ebook-image img{
-
-max-width:260px;
+transform:translateY(-6px);
 
 }
 
@@ -419,23 +596,21 @@ text-align:center;
 
 .ebook-content h2{
 
-font-size:32px;
+font-size:36px;
+
+max-width:100%;
 
 }
 
-.description{
+.description,
+
+.small{
+
+max-width:100%;
 
 margin-left:auto;
 
 margin-right:auto;
-
-font-size:16px;
-
-}
-
-.small{
-
-font-size:15px;
 
 }
 
@@ -449,7 +624,7 @@ max-width:320px;
 
 .contact{
 
-padding:50px 0;
+padding:45px 0;
 
 }
 
@@ -457,61 +632,10 @@ padding:50px 0;
 
 flex-direction:column;
 
-gap:18px;
-
 align-items:center;
 
-}
+gap:20px;
 
 }
-.hero-center{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-text-align:center;
-
-}
-
-.hero-line{
-
-width:120px;
-
-height:1px;
-
-background:#b79d58;
-
-margin:28px 0;
-
-opacity:.8;
-
-}
-
-.hero h1{
-
-font-family:"Cormorant Garamond",serif;
-
-font-weight:600;
-
-letter-spacing:0;
-
-}
-
-.ebook-content h2{
-
-font-family:"Cormorant Garamond",serif;
-
-font-weight:600;
-
-line-height:1.05;
-
-}
-
-.hero p{
-
-max-width:620px;
 
 }
