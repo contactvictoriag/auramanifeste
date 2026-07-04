@@ -94,38 +94,43 @@ HERO
 
 .hero{
 
-padding:110px 0 80px;
+padding:70px 0 50px;
+
+display:flex;
+
+align-items:center;
+
+min-height:55vh;
 
 }
 
 .hero h1{
 
-font-size:clamp(2.7rem,6vw,5rem);
+font-size:clamp(2.4rem,5vw,4.2rem);
 
-line-height:1.02;
+line-height:1.08;
 
 font-weight:600;
 
-max-width:760px;
+max-width:620px;
 
-letter-spacing:-2px;
+letter-spacing:-1.5px;
 
-margin-bottom:28px;
+margin-bottom:18px;
 
 }
 
 .hero p{
 
-font-size:18px;
+font-size:17px;
 
-line-height:1.9;
+line-height:1.8;
 
-color:#B3B3B3;
+color:#A9A9A9;
 
-max-width:640px;
+max-width:500px;
 
 }
-
 /* =========================
 EBOOKS
 ========================= */
