@@ -337,6 +337,25 @@ MOBILE
 ========================= */
 
 @media(max-width:900px){
+  .reverse{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.reverse .ebook-image{
+
+order:1 !important;
+
+}
+
+.reverse .ebook-content{
+
+order:2 !important;
+
+}
 
 header .container{
 
@@ -386,15 +405,7 @@ gap:40px;
 
 }
 
-.reverse .ebook-image,
-
-.reverse .ebook-content{
-
-order:initial;
-
-}
-
-.ebook-image img{
+  .ebook-image img{
 
 max-width:260px;
 
