@@ -445,3 +445,54 @@ align-items:center;
 }
 
 }
+.hero-center{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+.hero-line{
+
+width:120px;
+
+height:1px;
+
+background:#b79d58;
+
+margin:28px 0;
+
+opacity:.8;
+
+}
+
+.hero h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-weight:600;
+
+letter-spacing:0;
+
+}
+
+.ebook-content h2{
+
+font-family:"Cormorant Garamond",serif;
+
+font-weight:600;
+
+line-height:1.05;
+
+}
+
+.hero p{
+
+max-width:620px;
+
+}
